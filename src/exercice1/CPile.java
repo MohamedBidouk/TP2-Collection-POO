@@ -4,36 +4,36 @@ import java.util.ArrayList;
 
 public class CPile<A> implements IPile{
 	
-	ArrayList<A> Pile =new ArrayList<A>() ;
+	public ArrayList<A> Pile ;
+	CPile(){
+		Pile = new ArrayList<A>() ;
+	}
 
 	@Override
 	public boolean estVide() {
-		// TODO Auto-generated method stub
-		return false;
+		return Pile.isEmpty();
 	}
 
 	@Override
 	public void empile(Object a) {
-		// TODO Auto-generated method stub
+		Pile.add((A)a); 
 		
 	}
 
 	@Override
 	public Object depile() {
-		// TODO Auto-generated method stub
-		return null;
+		Pile.remove(Pile.size()-1);
+		return Pile;
 	}
 
 	@Override
 	public int nbElements() {
-		// TODO Auto-generated method stub
-		return 0;
+		return Pile.size();
 	}
 
 	@Override
 	public Object sommet() {
-		// TODO Auto-generated method stub
-		return null;
+		return Pile.get(Pile.size()-1);
 	}
 
 }
